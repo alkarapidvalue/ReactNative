@@ -2,6 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+const MyData = () => {
+  return(
+    <Text>wah wah</Text>
+  )
+}
 export default function App() {
   const diap = ['eat','sleep','code']
   const listdc = diap.map((data=>{
@@ -12,6 +17,9 @@ export default function App() {
       <Text>{Math.random()}</Text>
       <Text>Alka</Text>
       {listdc}
+      <MyData/>
+      <MyData/>
+      <MyData/>
       <StatusBar style="auto" />
     </View>
   );

@@ -1,25 +1,42 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { render } from 'react-dom';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
-const MyData = () => {
+const MyData = (props) => {
   return(
-    <Text>wah wah</Text>
+    <View>
+    <Text>{props.name}</Text>
+    <Text>{props.status}</Text>
+    </View>
+    
   )
 }
+
 export default function App() {
+  state = {
+    name:'alka',
+    status:'engineer'
+  }
+
   const diap = ['eat','sleep','code']
   const listdc = diap.map((data=>{
-    return <Text>{data}</Text>
+    return <Text key={data}>{data}</Text>
   }))
+ 
   return (
     <View style={styles.container}>
       <Text>{Math.random()}</Text>
-      <Text>Alka</Text>
+      
       {listdc}
-      <MyData/>
-      <MyData/>
-      <MyData/>
+      <MyData name='Alka' status='coder'/>
+      <MyData name='Puja' status='Married'/>
+      <MyData name='Apurva' status='Single'/>
+      {/* <Button
+        title="Press me"
+        
+        onPress={this.handlest.bind(this,'name')}
+      />  */}
       <StatusBar style="auto" />
     </View>
   );
